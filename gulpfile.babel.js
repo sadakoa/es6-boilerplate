@@ -8,6 +8,9 @@ import fs from 'fs'
 // compile for stylus
 import stylus from 'gulp-stylus';
 
+// compile for jade
+import jade from 'gulp-jade';
+
 import notify from 'gulp-notify';
 
 // module, and get stream
@@ -38,4 +41,11 @@ gulp.task('stylus', () => {
     .pipe(stylus())
     .pipe(gulp.dest('./dist/stylesheet'))
     .pipe(browser.reload({stream:true}));
+});
+
+gulp.task('jade', () => {
+  gulp.src('app/jade/**/*.jade')
+    .pipe(plumber())
+    .pipe(jade({pretty: true}))
+    .pipe(gulp.dest('./dist'))
 });
