@@ -1,5 +1,6 @@
 'use strict';
 
+// gulp set
 import gulp from 'gulp';
 
 // default file system node
@@ -49,3 +50,17 @@ gulp.task('jade', () => {
     .pipe(jade({pretty: true}))
     .pipe(gulp.dest('./dist'))
 });
+
+gulp.task('reload', () => {
+  browser.reload();
+});
+
+gulp.task('server', () => {
+  browser({
+    server: {
+      baseDir: './dist'
+    }
+  });
+});
+
+gulp.task('build', ['js', 'stylus', 'jade'])
