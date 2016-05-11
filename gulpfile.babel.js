@@ -58,9 +58,19 @@ gulp.task('reload', () => {
 gulp.task('server', () => {
   browser({
     server: {
-      baseDir: './dist'
+      baseDir: './dist',
+      index: 'index.html'
     }
   });
 });
 
 gulp.task('build', ['js', 'stylus', 'jade'])
+
+// ブラウザリロードが通ってないので修正する
+
+gulp.task('run', ['server'], () => {
+  gulp.watch('./app/script/**/*.js', ['js', 'reload']);
+  gulp.watch('./app/stylus/**/*.stylus', ['stylus']);
+  gulp.watch('./app/jade/**/*.jade', ['jade', 'reload']);
+  gulp.watch("./dist/*.html", ['reload']);
+});
