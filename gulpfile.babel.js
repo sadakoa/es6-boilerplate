@@ -23,14 +23,14 @@ import handleErrors from "./handleErrors.js";
 // live reload
 import browser from "browser-sync";
 
-// gulp.task("default", () => {
-//   browserify({
-//       entries: ["./app/app.es6"]
-//     })
-//     .bundle()
-//     .pipe(source("app.js"))
-//     .pipe(gulp.dest("./build"));
-// });
+gulp.task("js", () => {
+  browserify({
+      entries: ["./app/script/app.es6"]
+    })
+    .bundle()
+    .pipe(source("app.js"))
+    .pipe(gulp.dest("./dist/js"));
+});
 
 gulp.task('stylus', () => {
   gulp.src('app/stylus/**/*.stylus')
