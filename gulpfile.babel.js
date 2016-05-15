@@ -1,55 +1,18 @@
 'use strict';
 
-// gulp set
-import gulp from 'gulp';
-
-// default file system node
-import fs from 'fs'
-
-// compile for stylus
-import stylus from 'gulp-stylus';
-
-// compile for jade
-import jade from 'gulp-jade';
-
+import gulp from 'gulp'; // gulp set
+import fs from 'fs'; // default file system node
+import stylus from 'gulp-stylus'; // compile for stylus
+import jade from 'gulp-jade'; // compile for jade
 import notify from 'gulp-notify';
-
-// module, and get stream
-import browserify from "browserify";
+import browserify from "browserify"; // module, and get stream
+import babelify from "babelify"; // babel for browserify
 import source from "vinyl-source-stream";
+import plumber from "gulp-plumber"; // watche for error
+import handleErrors from "./handleErrors.js"; // broserify, plumber don't stop.
+import browser from "browser-sync"; // live reload
 
-// watche for error
-import plumber from "gulp-plumber";
-
-// broserify, plumber don't stop.
-import handleErrors from "./handleErrors.js";
-
-// live reload
-import browser from "browser-sync";
-
-gulp.task("js", () => {
-  browserify({
-      entries: ["./app/script/app.es6"]
-    })
-    .bundle()
-    .pipe(source("app.js"))
-    .pipe(gulp.dest("./dist/js"));
-});
-
-gulp.task('stylus', () => {
-  gulp.src('app/stylus/**/*.stylus')
-    .pipe(plumber())
-    .pipe(stylus())
-    .pipe(gulp.dest('./dist/stylesheet'))
-    .pipe(browser.reload({stream:true}));
-});
-
-gulp.task('jade', () => {
-  gulp.src('app/jade/**/*.jade')
-    .pipe(plumber())
-    .pipe(jade({pretty: true}))
-    .pipe(gulp.dest('./dist'))
-});
+// =============================================
 
 gulp.task('reload', () => {
   browser.reload();
@@ -64,13 +27,47 @@ gulp.task('server', () => {
   });
 });
 
+// =============================================
+
+gulp.task("js", () => {
+  browserify({
+      entries: ["./app/script/app.es6"]
+    })
+    .transform(babelify)
+    .bundle()
+    .pipe(source("app.js"))
+    .pipe(gulp.dest("./dist/js"))
+    .pipe(browser.reload({stream:true}));
+});
+
+// =============================================
+
+gulp.task('stylus', () => {
+  gulp.src('app/stylus/**/*.stylus')
+    .pipe(plumber())
+    .pipe(stylus())
+    .pipe(gulp.dest('./dist/stylesheet'))
+    .pipe(browser.reload({stream:true}));
+});
+
+// =============================================
+
+gulp.task('jade', () => {
+  gulp.src('app/jade/**/*.jade')
+    .pipe(plumber())
+    .pipe(jade({pretty: true}))
+    .pipe(gulp.dest('./dist'))
+});
+
+// =============================================
+
 gulp.task('build', ['js', 'stylus', 'jade'])
 
-// ブラウザリロードが通ってないので修正する
+// =============================================
 
 gulp.task('run', ['server'], () => {
   gulp.watch('./app/script/**/*.js', ['js', 'reload']);
   gulp.watch('./app/stylus/**/*.stylus', ['stylus']);
-  gulp.watch('./app/jade/**/*.jade', ['jade', 'reload']);
+  gulp.watch('./app/jade/**/*.jade', ['jade']);
   gulp.watch("./dist/*.html", ['reload']);
 });

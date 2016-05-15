@@ -1,1 +1,1 @@
-let penchi = 30;
+let penchi = 60;
