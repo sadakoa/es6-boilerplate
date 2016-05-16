@@ -11,6 +11,8 @@ import source from "vinyl-source-stream";
 import plumber from "gulp-plumber"; // watche for error
 import handleErrors from "./handleErrors.js"; // broserify, plumber don't stop.
 import browser from "browser-sync"; // live reload
+import requireDir from 'require-dir'
+// requireDir('./gulp/tasks', { recurse: true });
 
 // =============================================
 
