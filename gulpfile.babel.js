@@ -1,7 +1,7 @@
-'use strict';
+'use strict'
 
 import gulp from 'gulp'; // gulp set
-import fs from 'fs'; // default file system node
+import fs from 'fs' // default file system node
 import stylus from 'gulp-stylus'; // compile for stylus
 import jade from 'gulp-jade'; // compile for jade
 import notify from 'gulp-notify';
@@ -11,21 +11,6 @@ import source from "vinyl-source-stream";
 import plumber from "gulp-plumber"; // watche for error
 import handleErrors from "./handleErrors.js"; // broserify, plumber don't stop.
 import browser from "browser-sync"; // live reload
-
-// =============================================
-
-gulp.task('reload', () => {
-  browser.reload();
-});
-
-gulp.task('server', () => {
-  browser({
-    server: {
-      baseDir: './dist',
-      index: 'index.html'
-    }
-  });
-});
 
 // =============================================
 
@@ -56,7 +41,24 @@ gulp.task('jade', () => {
   gulp.src('app/jade/**/*.jade')
     .pipe(plumber())
     .pipe(jade({pretty: true}))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist'));
+});
+
+// =============================================
+
+gulp.task('reload', () => {
+  browser.reload();
+});
+
+// =============================================
+
+gulp.task('server', () => {
+  browser({
+    server: {
+      baseDir: './dist',
+      index: 'index.html'
+    }
+  });
 });
 
 // =============================================
@@ -65,9 +67,13 @@ gulp.task('build', ['js', 'stylus', 'jade'])
 
 // =============================================
 
-gulp.task('run', ['server'], () => {
-  gulp.watch('./app/script/**/*.js', ['js', 'reload']);
+gulp.task('watch', ['server'], () => {
+  gulp.watch('./app/script/**/*.js', ['js']);
   gulp.watch('./app/stylus/**/*.stylus', ['stylus']);
   gulp.watch('./app/jade/**/*.jade', ['jade']);
-  gulp.watch("./dist/*.html", ['reload']);
+  gulp.watch('./dist/*.html', ['reload']);
 });
+
+// =============================================
+
+gulp.task('default', ['server', 'jade', 'stylus', 'js', 'watch'])
