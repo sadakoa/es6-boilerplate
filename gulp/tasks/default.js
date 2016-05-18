@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import browser from "browser-sync";
-var conf = require('../config.js');
+let conf = require('../config.js');
 
 gulp.task('reload', () => {
   browser.reload();

@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import plumber from "gulp-plumber";
 import jade from 'gulp-jade';
 import browser from "browser-sync";
-var conf = require('../config.js');
+let conf = require('../config.js');
 
 gulp.task('jade', () => {
 gulp.src('app/jade/**/*.jade')
