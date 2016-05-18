@@ -16,5 +16,5 @@ module.exports = {
   js: {
     src: src + '/script/app.es6',
     dest: dest + '/js',
-  }
+  },
 };
