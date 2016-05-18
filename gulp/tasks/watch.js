@@ -17,4 +17,5 @@ gulp.task('server', () => {
 
 gulp.task('watch', ['server'], () => {
   gulp.watch(conf.stylus.src, ['stylus']);
+  gulp.watch(conf.js.src, ['js']);
 });

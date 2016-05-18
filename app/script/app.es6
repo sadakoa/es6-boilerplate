@@ -1,1 +1,1 @@
-let penchi = 60;
+document.getElementByID('test').textContent = 'maru';
