@@ -5,7 +5,7 @@ import browser from "browser-sync";
 let conf = require('../config.js');
 
 gulp.task('stylus', () => {
-gulp.src(conf.stylus.src)
+ gulp.src(conf.stylus.src)
 .pipe(plumber())
 .pipe(stylus())
 .pipe(gulp.dest(conf.stylus.dest))
