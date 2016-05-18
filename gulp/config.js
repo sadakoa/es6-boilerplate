@@ -17,4 +17,8 @@ module.exports = {
     src: src + '/script/app.es6',
     dest: dest + '/js',
   },
+  image: {
+    src: src + '/images/**/*',
+    dest: dest + '/images',
+  },
 };
