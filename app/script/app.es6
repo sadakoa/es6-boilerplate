@@ -1,1 +1,2 @@
-let penchi = 60;
+let text = document.querySelectorAll('p');
+console.log(text);
