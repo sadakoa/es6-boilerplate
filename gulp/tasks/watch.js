@@ -18,4 +18,6 @@ gulp.task('server', () => {
 gulp.task('watch', ['server'], () => {
   gulp.watch(conf.stylus.src, ['stylus']);
   gulp.watch(conf.js.src, ['js']);
+  gulp.watch('./app/jade/**/*.jade', ['jade']);
+  gulp.watch('./dist/*.html', ['reload']);
 });
