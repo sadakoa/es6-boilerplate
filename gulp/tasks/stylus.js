@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import plumber from "gulp-plumber";
 import stylus from 'gulp-stylus';
 import browser from "browser-sync";
-var conf = require('../config.js');
+let conf = require('../config.js');
 
 gulp.task('stylus', () => {
 gulp.src(conf.stylus.src)

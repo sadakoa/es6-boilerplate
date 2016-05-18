@@ -1,8 +1,8 @@
 // 開発用ディレクトリ
-var src = './app'
+let src = './app'
 
 // 納品用ディレクトリ
-var dest = './dist'
+let dest = './dist'
 
 // データ受け渡し用 オブジェクト
 module.exports = {

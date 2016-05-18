@@ -5,7 +5,7 @@ import source from "vinyl-source-stream";
 import plumber from "gulp-plumber";
 import handleErrors from "../../handleErrors.js";
 import browser from "browser-sync";
-var conf = require('../config.js');
+let conf = require('../config.js');
 
 gulp.task("js", () => {
 browserify({
