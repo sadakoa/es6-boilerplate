@@ -1,1 +1,2 @@
-document.getElementByID('test').textContent = 'maru';
+let text = document.querySelectorAll('p');
+console.log(text);

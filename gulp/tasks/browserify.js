@@ -15,5 +15,5 @@ entries: [conf.js.src]
 .bundle()
 .pipe(source("app.js"))
 .pipe(gulp.dest(conf.js.dest))
-// .pipe(browser.reload({stream:true}));
+.pipe(browser.reload({stream:true}));
 });
