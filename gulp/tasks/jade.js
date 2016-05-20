@@ -5,7 +5,7 @@ import browser from "browser-sync";
 let conf = require('../config.js');
 
 gulp.task('jade', () => {
-gulp.src('app/jade/**/*.jade')
+gulp.src('app/jade/**/!(_)*.jade')
 .pipe(plumber())
 .pipe(jade({pretty: true}))
 .pipe(gulp.dest('./dist'));

@@ -1,3 +1,9 @@
+include ../_config
+
+block init
+  - var pageTitle = 'document';
+  - var bodyClass = '';
+
 doctype
 html(lang="ja")
   head
@@ -7,10 +13,9 @@ html(lang="ja")
     meta(name='Keywords', content='#{keywords}')
     link(rel='stylesheet', href='stylesheet/app.css')
 
-    block vars
-    title test
+    title ES6-boilerplate
 
-  body
+  body(class = bodyClass)
     block content
 
   script(src="js/app.js")
