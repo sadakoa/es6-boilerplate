@@ -4,7 +4,7 @@ import watch from 'gulp-watch';
 let conf = require('../config.js');
 
 gulp.task('watch', ['server'], () => {
-  watch(conf.stylus.src, () => {
+  watch('app/stylus/**/*.styl', () => {
     gulp.start(['stylus']);
   });
   watch(conf.js.src, () => {
