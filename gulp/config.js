@@ -1,10 +1,10 @@
-// 開発用ディレクトリ
+// develop PATH
 let src = './app'
 
-// 納品用ディレクトリ
+// Static PATH
 let dest = './dist'
 
-// データ受け渡し用 オブジェクト
+// deta PATH
 module.exports = {
   src: src,
   dest: dest,
