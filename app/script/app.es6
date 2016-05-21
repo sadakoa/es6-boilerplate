@@ -1,2 +1,4 @@
 let text = document.getElementById('id');
-console.log(text);
+text.addEventListener('click', () => {
+  text.style.color = '#E0575A';
+});
