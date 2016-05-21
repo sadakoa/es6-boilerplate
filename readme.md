@@ -1,4 +1,5 @@
 # es6-boilerplate
+![image](http://sadakoa.minibird.jp/img/boi.png)
 
 ## Overview
 
@@ -21,9 +22,14 @@ gulp template.
 ## Usage
 
   % npm install
+
   % gulp run
 
 ## Command
 
   % gulp build // compile
+
   % gulp run // watch and compile
+
+## Author
+[@sadako_A_](https://twitter.com/sadako_A_)
