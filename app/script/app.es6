@@ -1,2 +1,2 @@
-let text = document.querySelectorAll('p');
+let text = document.getElementById('id');
 console.log(text);

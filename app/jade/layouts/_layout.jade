@@ -1,7 +1,7 @@
 include ../_config
 
 block init
-  - var pageTitle = 'document';
+  - var pageTitle = '';
   - var bodyClass = '';
 
 doctype
@@ -13,7 +13,7 @@ html(lang="ja")
     meta(name='Keywords', content='#{keywords}')
     link(rel='stylesheet', href='stylesheet/app.css')
 
-    title ES6-boilerplate
+    title #{title}
 
   body(class = bodyClass)
     block content
