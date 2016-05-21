@@ -2,6 +2,8 @@
 'use strict';
 
 var text = document.getElementById('id');
-console.log(text);
+text.addEventListener('click', function () {
+  text.style.color = '#E0575A';
+});
 
 },{}]},{},[1]);
