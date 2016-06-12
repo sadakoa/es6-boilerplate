@@ -161,6 +161,11 @@ table {
 textarea {
   resize: vertical;
 }
+::-moz-selection {
+  background-color: #b3d4fc;
+  color: #4c2b03;
+  text-shadow: none;
+}
 ::selection {
   background-color: #b3d4fc;
   color: #4c2b03;
