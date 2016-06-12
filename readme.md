@@ -23,13 +23,13 @@ gulp template.
 
   % npm install
 
-  % gulp run
+  % gulp
 
 ## Command
 
   % gulp build // compile
 
-  % gulp run // watch and compile
+  % gulp // watch and compile
 
 ## Author
 [@sadako_A_](https://twitter.com/sadako_A_)

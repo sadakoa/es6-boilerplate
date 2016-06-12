@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import browser from "browser-sync";
+import browser from 'browser-sync';
 let conf = require('../config.js');
 
 gulp.task('reload', () => {
@@ -15,4 +15,4 @@ gulp.task('server', () => {
   });
 });
 
-gulp.task('run', ['server', 'jade', 'stylus', 'js', 'image', 'watch'])
+gulp.task('default', ['server', 'jade', 'stylus', 'js', 'image', 'watch'])
