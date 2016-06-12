@@ -1,8 +1,8 @@
 // develop PATH
-let src = './app'
+const src = './app'
 
 // Static PATH
-let dest = './dist'
+const dest = './dist'
 
 // deta PATH
 module.exports = {

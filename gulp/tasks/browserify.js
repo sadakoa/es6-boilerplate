@@ -1,14 +1,14 @@
 import gulp from 'gulp';
-import browserify from "browserify";
-import babelify from "babelify";
-import source from "vinyl-source-stream";
-import plumber from "gulp-plumber";
+import browserify from 'browserify';
+import babelify from 'babelify';
+import source from 'vinyl-source-stream';
+import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
-import handleErrors from "../../handleErrors.js";
-import browser from "browser-sync";
-let conf = require('../config.js');
+import handleErrors from '../../handleErrors.js';
+import browser from 'browser-sync';
+const conf = require('../config.js');
 
-gulp.task("js", () => {
+gulp.task('js', () => {
 browserify({
 entries: [conf.js.src]
 })
@@ -16,7 +16,7 @@ entries: [conf.js.src]
 .bundle()
 .on('error', handleErrors)
 .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
-.pipe(source("app.js"))
+.pipe(source('app.js'))
 .pipe(gulp.dest(conf.js.dest))
 .pipe(browser.reload({stream:true}));
 });

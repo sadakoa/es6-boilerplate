@@ -5,7 +5,7 @@ import plumber from 'gulp-plumber';
 import imagemin from 'gulp-imagemin'
 import pngquant from 'imagemin-pngquant'
 import changed from 'gulp-changed'
-let conf = require('../config.js');
+const conf = require('../config.js');
 
 gulp.task('image', () => {
   return gulp.src(conf.image.src)

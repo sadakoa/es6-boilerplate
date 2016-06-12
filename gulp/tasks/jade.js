@@ -3,7 +3,7 @@ import notify from 'gulp-notify';
 import plumber from 'gulp-plumber';
 import jade from 'gulp-jade';
 import browser from 'browser-sync';
-let conf = require('../config.js');
+const conf = require('../config.js');
 
 gulp.task('jade', () => {
 gulp.src('app/jade/**/!(_)*.jade')

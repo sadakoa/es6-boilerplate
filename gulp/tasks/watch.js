@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import browser from "browser-sync";
 import watch from 'gulp-watch';
-let conf = require('../config.js');
+const conf = require('../config.js');
 
 gulp.task('watch', ['server'], () => {
   watch('app/stylus/**/*.styl', () => {
