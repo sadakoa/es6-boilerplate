@@ -15,4 +15,4 @@ gulp.task('server', () => {
   });
 });
 
-gulp.task('run', ['server', 'jade', 'stylus', 'js', 'image', 'watch'])
+gulp.task('default', ['server', 'jade', 'stylus', 'js', 'image', 'watch'])
