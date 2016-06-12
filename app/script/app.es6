@@ -1,4 +1,5 @@
-const text = document.getElementById('id');
-text.addEventListener('click', () => {
-  text.style.color = '#E0575B';
-});
+import HelloAlert from './hello.js';
+import buttonFunction from './ivent.js';
+
+HelloAlert();
+buttonFunction();
