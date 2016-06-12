@@ -3,7 +3,7 @@
 
 var text = document.getElementById('id');
 text.addEventListener('click', function () {
-  text.style.color = '#E0575A';
+  text.style.color = '#E0575B';
 });
 
 },{}]},{},[1]);
